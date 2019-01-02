@@ -1,0 +1,79 @@
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+<view class='alertMsg' wx:if='{{canmsgFlg}}'>{{cancelMsg}}</view>
+  <view class='top'>
+    <text data-productid='{{newInfo.productId}}' bindtap='goToDetail' class='title'>{{newInfo.productName}}</text>
+    <text style='margin-top: 6px;display:block'> 出发日期：{{newInfo.startTimeStr}}</text>
+    <text style='margin-top: 6px;display:block'> 出游时间：{{newInfo.travelDays}}天</text>
+    <text style='margin-top: 6px;display:block'> 上车地址：{{newInfo.startCity}}{{newInfo.startAddress}}</text>
+  </view>
+  <view class='contact'>
+    <view catchtap='callMe' class='phone'><image src='../../images/phone.png'/> 电话客服</view>
+  </view>
+  <view class='contact'>
+    <view>联系人<input disabled value='{{newInfo.contactName}}'></input></view>
+    <view>手机号码<input disabled value='{{newInfo.contactPhone}}'></input></view>
+    <view>邮箱<input disabled value='{{newInfo.contactEmail}}'></input></view>
+  </view>
+  <view class='tourist'>
+    <view wx:for="{{newInfo.touristList}}">
+      <view class='tourist_item'>
+        <text>{{item.name}}</text>
+        <text>{{item.type == 0? '成人': '儿童'}}</text>
+        <text>{{item.idCard}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='contact'>
+    <view wx:if='{{newInfo.adultNum != 0}}'>成人 <text class='cont_right'>￥{{newInfo.adultPrice}} * {{newInfo.adultNum}}</text></view>
+    <view wx:if='{{newInfo.childNum != 0}}'>儿童 <text class='cont_right'>￥{{newInfo.childPrice}} * {{newInfo.childNum}}</text></view>
+    <view wx:if='{{newInfo.insuranceAmount != ""}}'>保险 <text class='cont_right'>￥{{newInfo.insuranceAmount}}</text></view>
+    <block wx:if='{{newInfo.productPlanItemList.length > 0}}' wx:for='{{newInfo.productPlanItemList}}'>
+      <view>{{item.name}} <text class='cont_right'>￥{{item.price}}</text></view>
+    </block> 
+  </view>
+  <view class='contact'>
+    <view style='height:130px;'>备注消息
+    <textarea disabled>{{newInfo.remarks}}</textarea>
+    </view>
+  </view>
+  <view class='footer'></view>
+      <view class='btns'>
+        <view class='btns_left'>
+          总价：￥{{newInfo.amount}}
+        </view>
+        <view wx:if='{{newInfo.status == 0}}' class='btns_right'>
+          <text catchtap='cancelFun' class='btns_add'>取消订单</text>
+          <text catchtap='payment' class='btns_submit'>马上支付</text>
+        </view>
+        <view wx:if='{{newInfo.status == 1 || newInfo.status == 2}}' class='btns_right'>
+          <text style='border-radius:20px;' class='btns_submit'>申请退款</text>
+        </view>
+        <view wx:if='{{newInfo.status == 5}}' class='btns_right'>
+          <text style='border-radius:20px;background:#999;' class='btns_submit'>退款中</text>
+        </view>
+        <view wx:if='{{newInfo.status == 6}}' class='btns_right'>
+          <text style='border-radius:20px;background:#999;' class='btns_submit'>已退款</text>
+        </view>
+        <view wx:if='{{newInfo.status == 7}}' class='btns_right'>
+          <text style='border-radius:20px;background:#999;' class='btns_submit'>已超时，未付款</text>
+        </view>
+        <view wx:if='{{newInfo.status == 4}}' class='btns_right'>
+          <text style='border-radius:20px;background:#999;' class='btns_submit'>已取消</text>
+        </view>
+        <view wx:if='{{newInfo.status == 8}}' class='btns_right'>
+          <text style='border-radius:20px;background:#999;' class='btns_submit'>不成团,已退款</text>
+        </view>
+        <view wx:if='{{newInfo.status == 3 && newInfo.evaluationId == null}}' class='btns_right'>
+          <view>
+          <text data-ordercode='{{newInfo.orderCode}}' data-productid='{{newInfo.productId}}' bindtap='evaluationFun' style='border-radius:20px;background: orange' class='btns_submit'>评价</text>
+          </view>
+        </view>
+        <view wx:if='{{newInfo.status == 3 && newInfo.evaluationId != nul}}'>
+          <text data-ordercode='{{newInfo.orderCode}}' data-productid='{{newInfo.productId}}' style='border-radius:20px;background:#999;' class='btns_submit'>已评价</text>
+          </view>
+      </view>
+</view>

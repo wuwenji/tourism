@@ -1,0 +1,72 @@
+/* pages/user/user.wxss */
+.header{
+  height: 220rpx;
+  padding-left: 30rpx;
+}
+.header image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  float: left;
+}
+.header .userinfo-nickname{
+  font-size: 22px;
+  font-weight: bold;
+}
+.integral{
+  font-size: 14px;
+  margin-top: 20rpx;
+  color: #cd8b0c;
+}
+.header_right{
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 45rpx;
+}
+.btns_container{
+  margin: 0 15px;
+}
+.btns_container .title{
+  font-size: 18px;
+  font-weight:bold;
+  margin-top: 10px;
+}
+.btns_all{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.btns_item{
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #343434;
+}
+.btns_item image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.list_btns{
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: 50rpx;
+  padding-bottom: 25rpx;
+}
+.list_btns .left_img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  position:relative;
+  top: 6rpx;
+}
+.list_btns .right_img{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  position:relative;
+  top: 10rpx;
+}
+.list_btns {
+  font-size: 14px;
+  color: #999999;
+}

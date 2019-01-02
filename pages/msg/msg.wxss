@@ -1,0 +1,15 @@
+/* pages/msg/msg.wxss */
+.body{
+  color: #666;
+  text-align: center;
+  padding-top: 50px;
+}
+.body icon{
+  margin-right: 5px;
+}
+.bnts{
+  margin-top: 30px;
+}
+.bnts button{
+  margin: 0 10px;
+}

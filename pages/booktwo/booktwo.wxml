@@ -1,0 +1,56 @@
+<import src='../../utils/wxParse/wxParse.wxml' />
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+  <view wx:if="{{errorFlg}}" class='error'>
+    {{error}}
+  </view>
+  <view wx:if='{{insurancesDetailFlg}}' class='insurances_detail'>
+    <view class='insurances_detail_content'>
+      <view><template is='wxParse' data='{{wxParseData:article.nodes}}' /></view>
+      <view class='insurances_detai_btn_bg'></view>
+      <view catchtap='insurEnt' class='insurances_detai_btn'>确定</view>
+    </view>
+  </view>
+  <view class='contact'>
+    <view>保险 <text style='float:right;color:red;'>建议购买</text></view>
+    <view hidden="{{!aniStyle}}">
+      <checkbox-group>
+        <view style='margin-bottom:10px;' wx:for='{{names}}' wx:for-item="it">
+          <view class='bxName'>{{it.name}} :</view>
+          <view class='bxBottom' wx:for="{{insurances}}">
+            <checkbox data-name='{{it.id}}' data-key='{{item.insuranceId}}' data-money='{{item.money}}' bindtap='clickFun' value="{{item.insuranceId}}" checked="{{item.checked}}" /><text>{{item.name}}</text><text data-detail='{{item.detailRemark}}' bindtap='seeDetail'>查看详情</text><text>￥{{item.money}}/人</text>
+          </view>
+        </view>
+      </checkbox-group>
+    </view>
+    <view class='btns'>
+      <text catchtap='bxShow' class='btn' wx:if="{{!aniStyle}}">展开</text>
+      <text catchtap='bxHide' class='btn' wx:if="{{aniStyle}}">收起</text>
+    </view>
+  </view>
+  <!-- <view class='tourist'>
+    <text class='title'>保险说明：</text>
+    <view style='color:#666;margin-top:5px;'>此处江汽添加，此处江汽添加，此处江汽添加，此处江汽添加。</view>
+  </view> -->
+  <view class='tourist' wx:for='{{planItemList}}'>
+    <text class='title' style='color: #fc6b02'>{{item.name}}：￥{{item.price}}</text>
+    <view style='color:#666;margin-top:5px;'>{{item.remark}}</view>
+  </view>
+  <view class='tourist'>
+    <text class='title'>发票消息：</text>
+    <view style='color:#666;margin-top:5px;'>行程结束后，可通过“我的订单”申请发票。</view>
+  </view>
+  <view class='tourist' style='border:none;'>
+    <checkbox checked="{{isOk}}" color='red'/>同意
+    <view style='color:#666;margin-top:5px;'>本人及本人代表报名的全体客人，对以上所填写资料及勾选内容确认无误，并已详细阅读<text data-detail='{{contractDetail}}' bindtap='seeDetail' style='color: red;'>合同内容......</text></view>
+  </view>
+  <view class='next_bg'></view>
+  <view class='next'>
+    <text>合计：￥{{total}}</text>
+    <text wx:if='{{shoppingCar == "0"}}' catchtap='addCar'>加入购物车</text>
+    <text wx:else catchtap='next'>提交订单</text>
+  </view>
+</view>

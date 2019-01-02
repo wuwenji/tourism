@@ -1,0 +1,41 @@
+/* pages/invoice/invoice.wxss */
+.item{
+  font-size: 14px;
+  margin: 8px 0px;
+}
+.item_block{
+  padding: 10px 15px;
+}
+.item text{
+  float: right;
+}
+.title{
+  font-size: 14px;
+  font-weight: bold;
+}
+.invoi{
+  color: red;
+  margin: 10px 0; 
+}
+.invoi text{
+ font-size: 42px;
+}
+.item_{
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.right_icon{
+  width: 25rpx;
+  height: 25rpx;
+  float: right;
+}
+.item_ input{
+  width: 400rpx;
+  position: relative;
+  top: 8px;
+  display: inline-block;
+}
+radio{
+  transform:scale(0.8)
+}

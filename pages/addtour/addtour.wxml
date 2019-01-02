@@ -1,0 +1,47 @@
+<!--pages/addtour/addtour.wxml-->
+<view class='body'>
+  <view style='border-bottom:2px solid #ccc;padding-bottom:10px;'>常用联系人：</view>
+  <checkbox-group bindchange="checkboxChange">
+    <view wx:for="{{contacts}}" class='tourist_item'>
+      <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+      <text>{{item.name}}</text>
+      <text>{{item.type}}</text>
+      <text>{{item.idCard}}</text>
+    </view>
+  </checkbox-group>
+  <text catchtap='addContact' class='add_contact'>新增游客</text>
+  <view class='btns_bg'></view>
+  <view class='btns btns2'>
+    <text catchtap='cancel' class='no'>取消</text>
+    <text bindtap='submit' class='yes'>确定</text>
+  </view>
+  <!--<view>新增联系人：</view> -->
+  <view hidden='{{!formFlg}}' class='form'>
+    <view wx:if='{{alertFlg}}' class='alert'>
+      {{alertMsg}}
+    </view>
+    <form bindsubmit="formSubmit" >
+    <text style='color: red; position: absolute;'>{{res}}</text>
+    <view class='item'>
+      <text>姓名：</text><input name='name' value='{{inputValu}}' placeholder='请输入姓名'></input>
+    </view>
+    <view class='item'>
+      <text>类型：</text><radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view class='item'>
+    <text>手机号：</text><input value='{{inputValu}}' name='phone' placeholder='手机号'></input>
+  </view>
+  <view class='item'>
+    <text>身份证号：</text><input value='{{inputValu}}' name='number' placeholder='身份证号(儿童忽略)'></input>
+  </view>
+  <view class='btns'>
+    <text catchtap='noWindow'>取消</text>
+    <button form-type="submit">添加</button>
+  </view>
+  </form>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<!--pages/invoice/invoice.wxml-->
+<view class='body'>
+  <view class='cl_border'></view>
+  <view class='item_block'>
+    <view class='item'>
+      订单编号： <text>999999</text>
+    </view>
+    <view class='item'>
+      旅游团费： <text>￥530.00</text>
+    </view>
+    <view class='item'>
+      不可开票金额： <text>￥30.00</text>
+    </view>
+    <view class='item'>
+      可开票金额： <text>￥500.00</text>
+    </view>
+    <view class='item' style='color: #666;'>
+      通过积分、优惠券、等支付的费用，不开具发票，保险费用可查看保险单号，登录保险公司网址www.www.com开具
+    </view>
+  </view>
+  <view class='cl_border'></view>
+  <view class='item_block'>
+    <view class='title'>本次开发票金额</view>
+    <view class='invoi'><text>￥</text> 500.00</view>
+  </view>
+  <view class='cl_border'></view>
+  <view class='item_block'>
+  <view class='item'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+    </view>
+    <view class='item_'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        抬头类型：{{array[index]}}
+        <image class='right_icon' src='../../images/right.png'></image>
+      </view>
+    </picker>
+    </view>
+    <view class='item_'>
+      抬头类型：<input placeholder='请输入发票抬头'/>
+    </view>
+  </view>
+  <view class='cl_border'></view>
+  <view class='item_block'>
+    <view class='title'>收件人信息</view>
+    <view class='item_'>
+      姓名：<input placeholder='请输入姓名'/>
+    </view>
+    <view class='item_'>
+      电话：<input placeholder='请输入电话'/>
+    </view>
+    <view class='item_'>
+      邮箱：<input placeholder='请输入邮箱'/>
+    </view>
+  </view>
+  <button style='color: #fc6b02'>提交</button>
+</view>

@@ -1,0 +1,21 @@
+/**app.wxss**/
+.cl{
+  clear: both;
+  visibility: hidden;
+}
+.cl_border{
+  background: #e4e4e4;
+  height: 7px;
+  border-top: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
+}
+.loading{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30%;
+  color: #666;
+}
+.loading image{
+  width: 50px;
+  height: 50px;
+}

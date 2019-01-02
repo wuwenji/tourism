@@ -1,0 +1,132 @@
+<!--pages/detail/detail.wxml-->
+<import src='../../utils/wxParse/wxParse.wxml' />
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" current="{{current}}" circular="{{circular}}" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+      <block wx:for="{{banners}}">
+        <swiper-item>
+        <image src='{{item}}' style='width: 100%;'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='detail'>
+    <view class='detail_container'>
+      <view class='detail_header'>
+        <view class='detail_header_left'>
+          <text class='name'>{{productDetail.product.name}}</text>
+          <text class='meal'>{{productDetail.product.sketch}}</text>
+          <text class='price'>原价 ￥{{showProduct.originalPrice}}/人</text>
+        </view>
+        <view class='detail_header_right'>￥{{showProduct.price}}</view>
+      </view>
+
+      <view class='goto_info'>
+        <!-- <text>出发地：{{productDetail.productPlans[0].productPlanAddressList[0].city}}</text> -->
+        <text>目的地：{{productDetail.product.endCity}}</text>
+        <text>服务商：{{productDetail.product.companyName}}</text>
+      </view>
+
+      <view class='date'>
+        <scroll-view class='scroll' scroll-x>
+          <view class='date_item' wx:for='{{dates}}'>
+            <view bindtap='planClick' data-showproduct='{{item}}' data-date='{{item.date}}' data-planid='{{item.id}}' class="date_item_top {{plan==item.id?'planed':''}}">
+              <text>{{item.startDate}}</text>
+              <text>{{item.price}}元</text>
+            </view>
+            <text wx:if='{{item.limitNumber - item.clusterSize > 30}}' class='ticket'>余票充足</text>
+            <text wx:if='{{item.limitNumber - item.clusterSize <= 0}}' class='ticket'>无票</text>
+            <text wx:if='{{item.limitNumber - item.clusterSize <= 30 && item.limitNumber - item.clusterSize > 0}}' class='ticket'>剩余：{{item.limitNumber - item.clusterSize}}</text>
+          </view>
+        </scroll-view>
+        <!-- <view class='date_item'>
+          <view catchtap='gotoDate' class='date_item_top'>
+            <text>更多</text>
+            <text>日期</text>
+          </view>
+        </view> -->
+      </view>
+
+      <view class='goto_info'>
+        <text>成人：￥{{showProduct.price}}</text>
+        <text>儿童：￥{{showProduct.childrenPrice}}</text>
+        <!-- <text>婴儿：￥199</text> -->
+      </view>
+
+      <view class='evaluate'>
+        <block wx:if='{{evaluations.length > 0}}'>
+          <view wx:for='{{evaluations}}'>
+            <view class='eval_item'>
+              <view class='left'>
+                <image src='{{item.avatarUrl}}'/>
+                <view class='eval_name'>{{item.nickName}}</view>
+              </view>
+              <view class='right'>
+                <view class="xings">
+                  <image wx:for='{{item.stars}}' class='xing' src='../../images/scor.png'/>
+                  <image wx:for='{{5 - item.stars}}' class='xing' src='../../images/scor_.png'/>
+                </view>
+                <view class='evaluate_cont'>{{item.content}}</view>
+                <view class='right_bottom'>{{item.createDateStr}}</view>
+              </view>
+              <view class='cl'></view>
+            </view>
+          </view>
+          <view class='see_eval'>
+            <text data-productid='{{producId}}' bindtap='goToScore'>查看更多 》</text>
+          </view>
+        </block>
+        <view style='font-size: 12px; text-align: center;color:#666;margin-bottom: 10px;' wx:if='{{evaluations.length == 0}}'>
+          暂无评价
+        </view>
+        <!-- <view class='evaluate_top'>
+          <text class='evaluate_top_left'>4.9 / 5 分</text> 
+          <text class='evaluate_top_right'>(100人出游)</text>
+          <view>
+            <view  class='xingzhu'><text>行程满意</text> <progress stroke-width="14" percent="98" /> <text>4.9</text></view>
+            <view  class='xingzhu'><text>住宿安心</text> <progress stroke-width="14" percent="98" /> <text>4.9</text></view>
+          </view>
+        </view>
+        <view class='see_eval'>
+          <text data-productid='{{producId}}' bindtap='goToScore'>查看更多 》</text>
+        </view> -->
+      </view>
+      <view class='evaluate'>
+        <text class='name name2'>产品特色</text>
+        <view class='pp'>
+          <template is='wxParse' data='{{wxParseData:article.nodes}}' />
+        </view>
+      </view>
+      <view class='evaluate'>
+        <text class='name name2'>行程介绍</text>
+        <view class='pp'>
+          <template is='wxParse' data='{{wxParseData:introduction.nodes}}' />
+        </view>
+      </view>
+      <view class='evaluate'>
+        <text class='name name2'>预定须知</text>
+        <view class='pp'>
+          <template is='wxParse' data='{{wxParseData:product.nodes}}' />
+        </view>
+      </view>
+      <view class='evaluate'>
+        <text class='name name2'>注意事项</text>
+        <view class='pp'>
+          <template is='wxParse' data='{{wxParseData:attention.nodes}}' />
+        </view>
+      </view>
+      <view class='footer'></view>
+      <view class='btns'>
+        <view class='btns_left'></view>
+        <view class='btns_right'>
+          <text bindtap='next' data-shoppingcar='0' data-date='{{plandate}}' data-name='{{productDetail.product.name}}' data-planid='{{plan}}' class='btns_add'>加入购物车</text>
+          <text bindtap='next' data-shoppingcar='1' data-date='{{plandate}}' data-name='{{productDetail.product.name}}' data-planid='{{plan}}' class='btns_submit'>立即预定</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

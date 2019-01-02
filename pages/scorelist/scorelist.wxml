@@ -1,0 +1,34 @@
+<!--pages/scorelist/scorelist.wxml-->
+<view class='loading' wx:if='{{bodyShow}}'>
+  <view><image src='../../images/timg.gif'></image></view>
+  正在加载...
+</view>
+<view wx:else class='body'>
+  <block wx:if='{{avatars.length > 0}}' wx:for='{{avatars}}'>
+    <view class='item'>
+      <view class='left'>
+        <image src='{{item.avatarUrl}}'/>
+        <view class='name'>{{item.nickName}}</view>
+      </view>
+      <view class='right'>
+        <view class="xings">
+          <image wx:for='{{item.stars}}' class='xing' src='../../images/scor.png'/>
+          <image wx:for='{{5 - item.stars}}' class='xing' src='../../images/scor_.png'/>
+        </view>
+        <view class='evaluate'>{{item.content}}</view>
+        <view class='right_bottom'>{{item.createDateStr}}</view>
+        <view wx:if='{{item.replyContent.length > 0}}' class='replay'>
+          <view class='replay_left'>商家： </view>
+          <view class='replay_'>
+          {{item.replyContent}}
+          <!-- <view class='right_bottom'>{{item.replyDate}}</view> -->
+          </view>
+        </view>
+      </view>
+      <view class='cl'></view>
+    </view>
+  </block>
+  <view style='font-size: 12px; text-align: center;color:#666;' wx:if='{{avatars.length == 0}}'>
+    暂无评价
+  </view>
+</view>

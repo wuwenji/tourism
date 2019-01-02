@@ -1,0 +1,74 @@
+/* pages/scorelist/scorelist.wxss */
+.xing{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 0px 2px;
+}
+.xings{
+  height: 20rpx;
+  position:relative;
+  top: -10rpx;
+  margin-bottom: 5px;
+}
+.left{
+  width: 100rpx;
+  float: left;
+  text-align: center;
+  color:blue;
+  margin-right: 10px;
+}
+.name{
+  white-space:nowrap;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80rpx;
+  margin-left: 10rpx;
+}
+.left image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 4px;
+}
+.right{
+  width: calc(100% - 100rpx - 10px);
+  float: left;
+  font-size: 14px;
+}
+.right_bottom{
+  color: #999;
+  font-size: 12px;
+}
+.evaluate{
+  margin-bottom: 10px;
+  color: #666;
+}
+.replay{
+  font-size: 12px;
+  margin-top: 10px;
+  border-top: 1px dashed #bbb;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+.replay_{
+  display: block;
+  float: left;
+  width: calc(100% - 110rpx);
+  color: #999;
+}
+.replay_left{
+  width: 80rpx;
+  float:left;
+  display:block;
+  color:rgb(88, 214, 172);
+}
+.item{
+  width: calc(100% - 30rpx);
+  margin: 15rpx;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+.item:last-child{
+  border:none;
+}

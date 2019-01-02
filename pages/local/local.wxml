@@ -1,0 +1,106 @@
+<!--pages/orders/orders.wxml-->
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-index="0" bindtap="swichNav">综合</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-index="1" bindtap="swichNav">销量</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-index="2" bindtap="swichNav">铁定出发</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-index="3" bindtap="shuiXun">筛选</view>
+  </view>
+  <view class='tab_bg'></view>
+  <view class='item_block' wx:if="{{sxFlg}}">
+    <block wx:for="{{products}}">
+      <view class='order_detail' data-ID="{{item.productId}}" catchtap='goDetail'>
+        <view class='order_name'>[{{item.name}}]{{item.sketch}}</view>
+        <view class='order_left'>
+          <image src='{{item.photoSrc}}'/>
+          <view class='img_absolute'>
+            <text class='img_absolute_top'>{{item.name}}</text>
+          </view>
+          <view class='price'>
+            <text class='price_one'>￥{{item.price}}起</text>
+            <text class='price_two'>已省{{item.save}}元</text>
+          </view>
+          <view class='evaluate'>
+            <text>{{item.commts}}条评论</text> <text>{{item.satisRatio}}%满意</text>      
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view wx:else>
+    <view style='margin: 15rpx;' wx:if='{{screenType == 1}}'>
+      <block wx:for="{{screenProducts}}">
+        <view class='order_detail' data-ID="{{item.productId}}" catchtap='goDetail'>
+          <view class='order_name'>[{{item.name}}]{{item.sketch}}</view>
+          <view class='order_left'>
+            <image src='{{item.photoSrc}}'/>
+            <view class='img_absolute'>
+              <text class='img_absolute_top'>{{item.name}}</text>
+            </view>
+            <view class='price'>
+              <text class='price_one'>￥{{item.price}}起</text>
+              <text class='price_two'>已省{{item.save}}元</text>
+            </view>
+            <view class='evaluate'>
+              <text>{{item.commts}}条评论</text> <text>{{item.satisRatio}}%满意</text>      
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:if='{{screenType == 2}}'>
+      <text style='text-align:center;font-size:14px;display:block;color:#666;'>搜到 0 条结果！</text>
+    </view>
+    <form wx:if='{{screenType == 0}}' bindsubmit="formSubmit">
+    <view class='loading screenLoad' wx:if='{{screenShow}}'>
+       <view><image src='../../images/timg2.gif'></image></view>
+       正在搜索...
+     </view>
+      <view class='form'>
+        <view>
+          <view class='form_title'>价格预算</view>
+          <view class='form_input'><input name='minPrice' placeholder='最低价'/> <text class='zhi'> — </text> <input name='maxPrice' placeholder='最高价'/></view>
+          <view class='form_title form_top'>出行日期</view>
+          <view class='form_input'>
+            <picker mode="date" value="{{date}}" start="2018-12-01" end="2027-09-01" bindchange="bindDateChange">
+              <view class="picker">
+                <text>{{date}}</text>
+              </view>
+            </picker>
+          </view>
+        </view>
+          <block wx:for='{{productLabelList}}' wx:for-item='parent'>
+          <view class='form_title form_top'>{{parent.fatherName}}</view>
+          <view class='form_input'>
+            <text wx:for='{{parent.labelNameList}}' catchtap='selectfun' data-value='{{item.ID}}' class="{{selectValue[item.ID] ? 'text_active': ''}}">{{item.LABELNAME}}</text>
+          </view>
+          </block>
+        <view class='form_title form_top'>行程天数</view>
+        <view class='form_input'>
+          <text catchtap='selectfun' data-value='1天' class="{{selectValue['1天'] ? 'text_active': ''}}">1天</text>
+          <text catchtap='selectfun' data-value='2天' class="{{selectValue['2天'] ? 'text_active': ''}}">2天</text>
+          <text catchtap='selectfun' data-value='3天' class="{{selectValue['3天'] ? 'text_active': ''}}">3天</text>
+          <text catchtap='selectfun' data-value='4天' class="{{selectValue['4天'] ? 'text_active': ''}}">4天</text>
+          <text catchtap='selectfun' data-value='>5天' class="{{selectValue['>5天'] ? 'text_active': ''}}">{{dayu}}5天</text>
+        </view>
+
+        <view class='form_title form_top'>剩余库存</view>
+        <view class='form_input'>
+          <text catchtap='selectfun' data-value='>10' class="{{selectValue['>10'] ? 'text_active': ''}}">{{dayu}}10</text>
+          <text catchtap='selectfun' data-value='<10' class="{{selectValue['<10'] ? 'text_active': ''}}">{{xiaoyu}}10</text>
+        </view>
+      </view>
+      <view class='btns_bg'></view>
+      <view class='form_btns'>
+        <text catchtap='quxiao'>取消</text>
+        <!-- <text>重置</text> -->
+        <button form-type="submit" class='submit'>确定</button>
+      </view>
+    </form>
+  </view>
+</view>

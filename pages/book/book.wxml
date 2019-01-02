@@ -1,0 +1,53 @@
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+  <view wx:if='{{alertFlg}}' class='alert'>
+    {{alertMsg}}
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class='top'>
+      <text class='title'>{{name}}</text>
+        <view class="picker">
+          出发日期：{{date}}
+        </view>
+      <view style='margin-top: 6px;'>
+      <text style='float:left;'>上车地点：</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{radioItems}}">
+          <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group></view>
+      <!-- <text style='margin-top: 6px;display:block'>详细地址：{{boardingPoint}}</text> -->
+    </view>
+    <view class='contact'>
+      <view>联系人<input name='contactName' placeholder='填写联系人姓名'></input></view>
+      <view>手机号码<input name='contactPhone' placeholder='必填，用户接收短信'></input></view>
+      <view>邮箱<input name='contactEmail' placeholder='必填，用户接收电子合同邮件'></input></view>
+    </view>
+    <view class='tourist'>
+      <view wx:for="{{tourists}}">
+        <view class='tourist_item'>
+          <text>{{item.name}}</text>
+          <text>{{item.type}}</text>
+          <text>{{item.idCard}}</text>
+          <icon data-index="{{index}}" bindtap='deleteTour' type="cancel" size="16" />
+        </view>
+      </view>
+      <view class='tour_btns'>
+        <text catchtap='addtouri'>添加游客</text>
+      </view>
+    </view>
+    <view class='contact'>
+      <view>备注消息 <textarea name='remarks' placeholder='请输入备注信息！'></textarea>
+      <view style='clear: both'></view>
+      </view>
+      
+    </view>
+    <view class='next_bg'></view>
+    <view catchtap='next' class='next'>
+      <button style='background:none;color:#fff;' form-type="submit">下一步</button>
+    </view>
+  </form>
+</view>

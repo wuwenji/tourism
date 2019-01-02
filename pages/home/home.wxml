@@ -1,0 +1,125 @@
+<!--pages/home/home.wxml-->
+<view class='loading' wx:if='{{bodyShow}}'>
+<view><image src='../../images/timg.gif'></image></view>
+正在加载...
+</view>
+<view wx:else class='body'>
+<view class='header'>
+  <view>
+    <view catchtap='changeCity' class='header_left'><text class='city_text'>{{city}} </text><image class='img_down' src='../../images/down.png'/></view>
+    <view catchtap='goSearch' class='search'> <icon class='img_search' type="search" size="14" color="#5c5c5c"/><text>请输入关键字</text></view>
+  </view>
+</view>
+
+<view class='banner'>
+    <swiper class='banner' indicator-dots="{{indicatorDots}}" current="{{current}}" circular="{{circular}}" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+  <block wx:for="{{banners}}">
+  <swiper-item>
+  <image bindtap='imgClick' data-href='{{item.url}}' src='{{item.pictureUrl}}' style='width: 100%;height: 203rpx'/>
+  </swiper-item>
+  </block>
+</swiper>
+</view>
+
+<view class='top_nav'>
+  <view class='nav_bar' data-type='2' catchtap='goLocal'>
+    <image class='nav_icon' src='../../images/local.png'/>
+    <view class='nav_text'>本地游</view>
+  </view>
+  <view class='nav_bar' data-type='1' catchtap='goLocal'>
+    <image class='nav_icon' src='../../images/periphery.png'/>
+    <view class='nav_text'>周边游</view>
+  </view>
+  <view class='nav_bar' data-type='3' catchtap='goLocal'>
+    <image class='nav_icon' src='../../images/domestic.png'/>
+    <view class='nav_text'>国内游</view>
+  </view>
+  <!-- <view class='nav_bar' data-type='4' catchtap='goLocal'>
+    <image class='nav_icon' src='../../images/exit.png'/>
+    <view class='nav_text'>出境游</view>
+  </view> -->
+</view>
+
+<view class='cl_border'></view>
+
+<view class='products_list'>
+  <text>热门景点</text>
+  <view class='list_title'>
+    <view class='list_title_right'><image class='list_title_img' style='width: 35px;height: 35px; position: relative;top: -5px;margin-right:5px;' src='../../images/hot.png' /></view>
+  </view>
+  <view class='cl'></view>
+  <scroll-view class='scroll' scroll-x>
+    <block wx:for='{{hotSpots}}'>
+      <view class='scroll_product' data-ID="{{item.productId}}" catchtap='goDetail'>
+        <image src='{{item.photoSrc}}'/>
+        <view class='product_text'>
+          <text class='ellipsis'>{{item.name}}</text>
+          <view class='product_price'><text>￥{{item.price}}</text></view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class='cl_border'></view>
+
+<view class='products_list'>
+  <text>本地游</text>
+  <view class='list_title'>
+    <view class='list_title_right' data-type='2' catchtap='goLocal'>全部 <image class='list_title_img' src='../../images/right.png' /></view>
+  </view>
+  <view class='cl'></view>
+  <scroll-view class='scroll' scroll-x>
+   <block wx:for='{{localTour}}'>
+      <view class='scroll_product' data-ID="{{item.productId}}" catchtap='goDetail'>
+        <image src='{{item.photoSrc}}'/>
+        <view class='product_text'>
+          <text class='ellipsis'>{{item.name}}</text>
+          <view class='product_price'><text>￥{{item.price}}</text></view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class='cl_border'></view>
+
+<view class='products_list'>
+  <text>周边游</text>
+  <view class='list_title'>
+    <view data-type='1' catchtap='goLocal' class='list_title_right'>全部 <image class='list_title_img' src='../../images/right.png' /></view>
+  </view>
+  <view class='cl'></view>
+  <scroll-view class='scroll' scroll-x>
+   <block wx:for='{{aroundTour}}'>
+      <view class='scroll_product' data-ID="{{item.productId}}" catchtap='goDetail'>
+        <image src='{{item.photoSrc}}'/>
+        <view class='product_text'>
+          <text class='ellipsis'>{{item.name}}</text>
+          <view class='product_price'><text>￥{{item.price}}</text></view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class='guess_like'>
+  <text>— 猜你喜欢 —</text>
+</view>
+<block wx:for='{{guessLike}}'>
+<view class='guess_prod' data-ID="{{item.productId}}" catchtap='goDetail'>
+  <view class='guess_prod_left'>
+    <image src='{{item.photoSrc}}' />
+  </view>
+  <view class='guess_prod_right'>
+   <view class='guess_title'>{{item.name}}</view>
+   <view class='guess_detail'>{{item.sketch}}</view>
+   <view class='guess_price'>
+   <text class='guess_price_left'>￥{{item.price}}</text> 
+   <text class='guess_price_right'>已售{{item.number}}</text>
+   </view>
+  </view>
+</view>
+<view class='cl'></view>
+</block>
+</view>

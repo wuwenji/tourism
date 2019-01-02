@@ -1,0 +1,23 @@
+<!--pages/score/score.wxml-->
+<view>
+  <view class='alert' wx:if='{{successFlg}}'>评价成功！</view>
+  <view class='title'>对本次行程评价</view>
+ <view class="xings">
+  <block wx:for="{{xings}}">
+    <image class='xing' data-index='{{index}}' bindtap='xingFun' src='{{item}}'/>
+  </block>
+ </view>
+ <view class='labels'>
+ <block wx:for='{{labels}}'>
+  <text bindtap='selectLabel' data-labelid='{{item.id}}' class="{{selecs[item.id] ? 'active': ''}}">{{item.name}}</text>
+  </block>
+ </view>
+<form bindsubmit="formSubmit">
+  <view class='tarea'>
+    <textarea name='content' placeholder='请您对我们的评价...'></textarea> 
+  </view>
+  <view class='btns'>
+    <button form-type="submit" type="primary">提交</button>
+  </view>
+ </form>
+</view>

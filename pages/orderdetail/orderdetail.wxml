@@ -1,0 +1,45 @@
+<view class='body'>
+  <view class='top'>
+    <view>行程结束</view>
+    <view>订单编号 <text>2018111111</text></view>
+    <view>下单时间 <text>2018-07-30</text></view>
+    <button catchtap='goScore'>评价</button>
+  </view>
+  <view class='contact'>
+    <text class='title'>[海滩直通车]台山两天《下川岛往返车》下川船票套票</text>
+    <text style='margin-top: 6px;display:block'> 出发日期：2018-12-01</text>
+    <text style='margin-top: 6px;display:block'> 出游时间：2天</text>
+    <text style='margin-top: 6px;display:block'> 出游人数：2人</text>
+  </view>
+  <view class='contact'>
+    <view class='phone' catchtap='callMe'><image src='../../images/phone.png'/> 电话客服</view>
+  </view>
+  <view class='contact'>
+    <view>联系人<input disabled value='吴先生'></input></view>
+    <view>手机号码<input disabled value='13800138000'></input></view>
+    <view>邮箱<input disabled value='1888@qq.com'></input></view>
+  </view>
+  <view class='tourist'>
+    <view wx:for="{{tourists}}">
+      <view class='tourist_item'>
+        <text>{{item.name}}</text>
+        <text>{{item.type}}</text>
+        <text>{{item.number}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='contact'>
+    <view>成人 <text class='cont_right'>￥128 * 2</text></view>
+    <view>儿童 <text class='cont_right'>￥128 * 1</text></view>
+    <view>保险 <text class='cont_right'>￥16 * 3</text></view>
+  </view>
+  <view class='footer'></view>
+      <view class='btns'>
+        <view class='btns_left'>
+          总价：￥399
+        </view>
+        <view class='btns_right'>
+          <text catchtap='invoiceFun' class='btns_submit'>申请发票</text>
+        </view>
+      </view>
+</view>

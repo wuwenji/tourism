@@ -1,0 +1,56 @@
+/* pages/search/search.wxss */
+.search_container{
+  margin: 0 15px;
+}
+.search_left{
+  background-color: #e7e7e7;
+  border-radius: 30rpx;
+  width: 600rpx;
+  height: 60rpx;
+  float: left;
+}
+.search{
+  height: 50rpx;
+}
+.search icon{
+  margin-left: 10px;
+  float:left;
+  position: relative;
+  top: 9px;
+}
+
+.search input {
+  font-size: 14px;
+  line-height: 50rpx;
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.search_right{
+  float: right;
+  margin-top: 6px;
+  color: #47cbbc;
+  width: 60rpx;
+  margin-left: 20rpx;
+  font-size: 14px;
+}
+.guess{
+  margin-top: 20px;
+}
+.guess .title{
+  color: #999;
+  font-size: 14px;
+  line-height: 44px;
+}
+.guess_list text{
+  float: left;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.clear{
+  float: right;
+  margin-top: 17px;
+}

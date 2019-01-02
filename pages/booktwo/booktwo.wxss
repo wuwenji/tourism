@@ -1,0 +1,154 @@
+/* pages/book/book.wxss */
+.contact{
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+  border-top: 2px solid #666;
+}
+.contact view input{
+  width: 550rpx;
+  float: right;
+  position: relative;
+  top: -4px;
+}
+.btns{
+  /* border-top: 1px solid #4bbe22 !important; */
+  margin-top:10px;
+  height: 25px;
+}
+.bxName{
+  border-bottom:1px solid #ddd;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+.bxBottom{
+  color: #666;
+  line-height: 25px;
+}
+.bxBottom text{
+  display: inline-block;
+  font-size: 12px;
+}
+.bxBottom checkbox{
+  width: 100rpx;
+}
+.bxBottom text:nth-child(2){
+  width: calc(100% - 370rpx);
+}
+.bxBottom text:nth-child(3){
+  width: 120rpx;
+  color: #fc6b02;
+}
+.bxBottom text:nth-child(4){
+  width: 150rpx;
+  text-align: right;
+  color: #ff0000;
+}
+.btn{
+  width: 60px;
+  display: block;
+  /* background: #4bbe22; */
+  text-align: center;
+  color: #fc6b02;
+  border-radius:10px;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #dfdfdf;
+  margin: 0 auto;
+  line-height: 20px;
+  font-size: 12px;
+  height: 20px;
+}
+.contact view{
+  /* border-bottom: 1px solid #ddd; */
+  /* padding: 20px 0 10px 0; */
+}
+.contact view:last-child{
+  border:none;
+}
+.tourist {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+}
+.tour_btns{
+  text-align: center;
+  color: #21efde;
+  margin: 20px 0;
+}
+.title{
+  font-weight: bold;
+}
+.tour_btns text{
+  border:1px solid #21efde;
+  padding: 5px 20px;
+}
+.next_bg{
+  height: 50px;
+}
+.next{
+  font-size: 16px;
+  text-align: center;
+  background: #ddd;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+}
+.next text{
+  display: inline-block;
+  padding: 10px 0;
+  text-align: center;
+  width: 50%;
+  color: #fc6b02;
+}
+.next text:nth-child(2){
+  background: #fc6b02;
+  color: #fff;
+}
+checkbox{
+  transform:scale(0.7);
+}
+.error{
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 4px 4px #ddd;
+}
+.insurances_detail{
+  background: rgba(0, 0, 0, 0.6);
+  width:100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999999999;
+}
+.insurances_detail_content{
+  font-size: 12px;
+  background: #fff;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  padding-right: 15rpx;
+  height: 80%;
+  width: calc(100% - 30rpx);
+  position: fixed;
+  bottom: 0;
+}
+.insurances_detai_btn_bg{
+  height: 50px;
+}
+.insurances_detai_btn{
+  text-align: center;
+  background: green;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

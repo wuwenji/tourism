@@ -1,0 +1,141 @@
+/* pages/book/book.wxss */
+.top{
+  font-size: 14px;
+  background: #eee;
+  border-top: 2px solid #666;
+  border-bottom: 2px solid #666;
+  padding: 10px;
+}
+.top button{
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 14px;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+  color: #21efde;
+}
+.title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+.radio-group{
+  display: inline-block;
+}
+radio{
+  transform:scale(0.7);
+  position:relative;
+  top: -2px;
+}
+.contact{
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+}
+.contact view input{
+  width: 550rpx;
+  float: right;
+  position: relative;
+  top: -4px;
+}
+.contact view{
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0 10px 0;
+}
+.contact view:last-child{
+  border:none;
+}
+.tourist {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+}
+.tourist_item text{
+  display: inline-block;
+  line-height: 30px;
+}
+.tourist_item text:nth-child(1){
+  width: 150rpx;
+}
+.tourist_item text:nth-child(2){
+  width: 100rpx;
+}
+.tourist_item text:nth-child(3){
+  width: 400rpx;
+}
+.tour_btns{
+  text-align: center;
+  color: #21efde;
+  margin: 20px 0;
+}
+.tour_btns text{
+  border:1px solid #21efde;
+  padding: 5px 20px;
+}
+.next{
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  background: #fc6b02;
+  color: #fff;
+}
+.phone{
+  text-align: center;
+  font-weight: bold;
+}
+.phone image{
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 4px;
+  margin-right: 5px;
+}
+.cont_right{
+  float: right;
+  color: red;
+}
+.footer{
+  height: 100rpx;
+}
+.btns{
+  position: fixed;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 20rpx 15rpx;
+  text-align: right;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+.btns_add{
+  background-color:#999;
+  color: #fff;
+  font-size: 14px;
+  width: 200rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 20px 0 0 20px;
+}
+.btns_submit{
+  background-color:#21efde;
+  color: #fff;
+  font-size: 14px;
+  width: 200rpx;
+  line-height: 30px;
+  display: inline-block;
+  text-align: center;
+  border-radius:20px;
+  margin-right: 20px;
+}
+.btns_left{
+  float:left;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}

@@ -1,0 +1,27 @@
+<!--pages/shoppingcart/shoppingcart.wxml-->
+<view class='body'>
+  <checkbox-group bindchange="checkboxChange">
+    <block wx:for='{{shopings}}'>
+      <view data-detail='{{item}}' bindtap='cartFun' class='guess_prod clb'>
+        <view class='check'>
+          <checkbox value='{{item.id}}' checked="{{item.select}}"/>
+        </view>
+        <view class='guess_prod_left'>
+          <image src='{{item.firstProductImageUrl}}' />
+        </view>
+        <view class='guess_prod_right'>
+        <view class='guess_title'>{{item.productName}}</view>
+        <view class='guess_price'>
+          <text class='guess_price_left'>￥{{item.amount}}</text>
+        </view>
+        </view>
+        <view class='delete'>移除</view>
+      </view>
+    </block>
+  </checkbox-group>
+  <view class='footer'>
+    <view class='footer_left'>总额：{{totalPrice}}</view>
+    <view class='footer_right'>立即支付</view>
+  </view>
+  
+</view>

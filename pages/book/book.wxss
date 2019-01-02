@@ -1,0 +1,104 @@
+/* pages/book/book.wxss */
+.top{
+  font-size: 14px;
+  background: #ffffcc;
+  border-top: 2px solid #666;
+  border-bottom: 2px solid #666;
+  padding: 10px;
+}
+.alert{
+  background: #fff;
+  box-shadow: 0px 0px 10px #000;
+  border-bottom: 1px solid #666;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  line-height: 30px;
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+.title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+.radio-group{
+  display: inline-block;
+}
+radio{
+  transform:scale(0.7);
+  position:relative;
+  top: -2px;
+}
+.radio{
+  display: block;
+}
+.contact{
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+}
+.contact view input{
+  width: 550rpx;
+  float: right;
+  position: relative;
+  top: -4px;
+}
+.contact view textarea{
+  width: 550rpx;
+  float: right;
+  position: relative;
+  top:2px;
+  height:80px;
+}
+.contact view{
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0 10px 0;
+}
+.contact view:last-child{
+  border:none;
+}
+.tourist {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid #666;
+}
+.tourist_item text{
+  display: inline-block;
+  line-height: 30px;
+}
+.tourist_item text:nth-child(1){
+  width: 150rpx;
+}
+.tourist_item text:nth-child(2){
+  width: 100rpx;
+}
+.tourist_item text:nth-child(3){
+  width: 400rpx;
+}
+.tour_btns{
+  text-align: center;
+  color: #21efde;
+  margin: 20px 0;
+}
+.tour_btns text{
+  border:1px solid #21efde;
+  padding: 5px 20px;
+}
+.next{
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  background: #fc6b02;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.next_bg{
+  height: 50px;
+}

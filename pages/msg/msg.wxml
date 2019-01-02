@@ -1,0 +1,8 @@
+<!--pages/msg/msg.wxml-->
+<view class='body'>
+<icon type="success" size="18px" /><text>支付成功！</text>
+  <view class='bnts'>
+    <button catchtap='goToHome' size='mini'>返回首页</button>
+    <button catchtap='goToOrders' size='mini' type="primary">我的订单</button>
+  </view>
+</view>

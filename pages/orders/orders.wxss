@@ -1,0 +1,66 @@
+/* pages/orders/orders.wxss */
+.tab-h{
+  height: 80rpx;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999999;
+  border-bottom: 1px solid #e5e5e5;
+}
+.top-bg{
+  height: 80rpx;
+}
+.tab-item{
+  flex: 1;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+.tab-item.active{
+  color: #d3601a;
+  border-bottom: 2px solid #d3601a;
+}
+.tab-content{
+  margin: 20px 15px;
+}
+.order_number{
+  font-size: 12px;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.order_number text{
+  float: right;
+}
+.order_left,.order_left image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.order_detail {
+  padding-bottom: 20px;
+  height: 230rpx;
+  margin-bottom: 40px;
+}
+.order_right,.order_left{
+  float: left;
+}
+.order_right{
+  width: 480rpx;
+  margin-left: 20rpx;
+  font-size: 14px;
+}
+.order_name{
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.order_prp{
+  margin-top: 6px;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}

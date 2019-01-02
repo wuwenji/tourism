@@ -1,0 +1,30 @@
+<!--pages/orders/orders.wxml-->
+
+<view class='body'>
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==-1?'active':''}}" data-current="-1" bindtap="swichNav">全部</view>
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">待付款</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">待出行</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">已完成</view>
+  </view>
+  <view class='top-bg'></view>
+  <view class='loading' wx:if='{{bodyShow}}'>
+    <view><image src='../../images/timg.gif'></image></view>
+    正在加载...
+  </view>
+  <view wx:else class='tab-content'>
+    <block wx:for="{{order}}">
+      <view class='order_detail' data-orderId='{{item.orderCode}}'  bindtap='orderFun'>
+        <view class='order_number'>订单编号：{{item.orderCode}} <text>订单状态：{{item.status}}</text></view>
+        <view>
+          <view class='order_left'><image src='{{item.firstProductImageUrl}}'/></view>
+          <view class='order_right'>
+            <view class='order_name'>{{item.productName}}</view>
+            <view class='order_time'>出发日期：{{item.startTimeStr}}</view>
+            <view class='order_prp'>人数：{{item.touristSum}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

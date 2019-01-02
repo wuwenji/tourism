@@ -1,0 +1,56 @@
+<!--pages/user/user.wxml-->
+<view class='header'>
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <view class='header_right'>
+    <view class="userinfo-nickname">
+      {{userInfo.nickName}}
+    </view>
+    <view class='integral'>积分：888</view>
+  </view> 
+</view>
+<view class='cl_border'></view>
+
+<view class='btns'>
+  <view class='btns_container'>
+    <view class='title'>我的订单</view>
+    <view class='btns_all'>
+      <view class='btns_item' data-type='0' bindtap='goToOrders'>
+        <image src='../../images/daiPayment.jpg'/>
+        <view>待付款</view>
+      </view>
+      <view class='btns_item' data-type='1' bindtap='goToOrders'>
+        <image src='../../images/daiTrip.jpg'/>
+        <view>待出行</view>
+      </view>
+      <view class='btns_item' data-type='3' bindtap='goToOrders'>
+        <image src='../../images/daiEvaluate.jpg'/>
+        <view>待评价</view>
+      </view>
+      <view class='btns_item' data-type='null' bindtap='goToOrders'>
+        <image src='../../images/myOrders.jpg'/>
+        <view>全部订单</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='cl_border'></view>
+
+<view>
+  <view class='btns_container'>
+   <view class='list_btns' catchtap='goShopping'>
+    <image class='left_img' src='../../images/gouWC.jpg'/> 
+    购物车 
+    <image class='right_img' src='../../images/right.png'/> 
+   </view>
+   <!-- <view class='list_btns'>
+    <image class='left_img' src='../../images/liuLLS.jpg'/> 
+    浏览历史 
+    <image class='right_img' src='../../images/right.png'/> 
+   </view>
+   <view class='list_btns'>
+    <image class='left_img' src='../../images/changLX.jpg'/> 
+    常用联系人 
+    <image class='right_img' src='../../images/right.png'/> 
+   </view> -->
+  </view>
+</view>

@@ -1,0 +1,262 @@
+/* pages/detail/detail.wxss */
+.wxParse-img{
+  width: 100% !important;
+  height: none !important;
+}
+.banner{
+  height: 350rpx;
+  background: #666;
+}
+.banner swiper{
+  height: 350rpx;
+}
+.planed{
+  background: #eee;
+  border: 1px solid #e99c1c !important;
+}
+.pp{
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  color: #666;
+}
+.name2{
+  font-size: 15px !important;
+}
+.detail{
+  position: absolute;
+  top: 300rpx;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px;
+  border-radius: 20px 20px 0 0;
+}
+.wx-swiper-dots{
+  position:relative;
+}
+.wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 70rpx; 
+}
+.detail_container{
+  padding: 0 15px;
+}
+.detail_header{
+  border-bottom: 1px solid #ddd;
+  padding-bottom:15px;
+}
+.detail_header:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.detail_header_left{
+  float:left;
+  width: 65%;
+}
+.detail_header_left text{
+  display: block;
+}
+.detail_header_right{
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 150rpx;
+  color: #e99c1c;
+  position: absolute;
+  right: 20rpx;
+}
+.name{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.meal{
+  font-size: 14px;
+  color: #666;
+  display: -webkit-box;
+}
+.price{
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  text-decoration: line-through;
+}
+.goto_info{
+  border-bottom: 1px solid #ddd;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.goto_info text{
+  display: block;
+  font-size: 14px;
+  color: #666;
+  line-height: 50rpx;
+}
+.scroll {
+  width:100%;
+  white-space:nowrap;
+}
+.date{
+  border-bottom: 1px solid #ddd;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.date_item{
+  width: 85px;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px;
+}
+.date_item_top{
+  border: 1px solid #666;
+  line-height: 25px;
+}
+.date_item text{
+  display: block;
+  text-align: center;
+}
+.ticket{
+  font-size: 12px;
+  margin-top: 5px;
+  color: red;
+}
+.evaluate{
+  margin-top: 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+.evaluate_top{
+  font-size: 14px;
+}
+.evaluate_top_left{
+  color: #e99c1c;
+}
+.evaluate_top_right{
+  color:#666;
+  float: right;
+}
+.xingzhu{
+  margin: 6px 0;
+}
+.xingzhu text,.xingzhu progress{
+ display: inline-block;
+}
+.xingzhu progress{
+ width: 500rpx;
+ margin: 0 5px;
+ position: relative;
+ top: 2px;
+}
+.see_eval{
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0;
+}
+.btns_right{
+  width: 400rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+.footer{
+  height: 100rpx;
+}
+.btns{
+  position: fixed;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 20rpx 15rpx;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.btns_add{
+  background-color:#ff9f01;
+  color: #fff;
+  font-size: 14px;
+  width: 200rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 20px 0 0 20px;
+}
+.btns_submit{
+  background-color: #fc6b02;
+  color: #fff;
+  font-size: 14px;
+  width: 200rpx;
+  line-height: 30px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 0 20px 20px 0;
+}
+
+.xing{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 0px 2px;
+}
+.xings{
+  height: 20rpx;
+  position:relative;
+  top: -10rpx;
+  margin-bottom: 5px;
+}
+.left{
+  width: 100rpx;
+  float: left;
+  text-align: center;
+  color:blue;
+  margin-right: 10px;
+}
+.eval_name{
+  white-space:nowrap;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80rpx;
+  margin-left: 10rpx;
+}
+.left image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 4px;
+}
+.right{
+  width: calc(100% - 100rpx - 10px);
+  float: left;
+  font-size: 14px;
+}
+.right_bottom{
+  color: #999;
+  font-size: 12px;
+}
+.evaluate_cont{
+  margin-bottom: 10px;
+  color: #666;
+}
+.replay{
+  font-size: 12px;
+  margin-top: 10px;
+  border-top: 1px dashed #bbb;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+.replay_{
+  display: block;
+  float: left;
+  width: calc(100% - 110rpx);
+  color: #999;
+}
+.replay_left{
+  width: 80rpx;
+  float:left;
+  display:block;
+  color:rgb(88, 214, 172);
+}
+.eval_item{
+  width: 100%;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}

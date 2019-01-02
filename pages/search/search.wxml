@@ -1,0 +1,31 @@
+<!--pages/search/search.wxml-->
+<view class='search_container'>
+  <view class='search'> 
+    <view class='search_left'>
+      <icon class='img_search' type="search" size="14" color="#5c5c5c"/>
+      <input placeholder='江门两日游'/>
+    </view>
+    <view catchtap='returnHome' class='search_right'>取消</view>
+  </view>
+  <view class='cl'></view>
+  <view class='guess'>
+    <text class='title'>猜你想找</text>
+    <view class='guess_list'>
+      <text>江门一日游</text>
+      <text>广州三日游</text>
+      <text>台山三天两夜游</text>
+      <text>广州动物园</text>
+      <text>长隆水上乐园</text>
+      <text>欢乐谷</text>
+    </view>
+  </view>
+  <view class='cl'></view>
+  <view class='guess'>
+    <text class='title'>历史搜索 </text><icon class='clear' type='clear' size='16' />
+    <view class='guess_list'>
+      <text>江门一日游</text>
+      <text>广州三日游</text>
+      <text>台山三天两夜游</text>
+    </view>
+  </view>
+</view>
